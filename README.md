@@ -2,8 +2,7 @@
 
 An interactive, high-performance data science and unsupervised machine learning workspace tracking African Elephants (*Loxodonta africana*) across Etosha National Park, Namibia. This system transforms over **2.9 million rows** of raw GPS telemetry logs into a live, reactive diagnostic dashboard analyzing home ranges, seasonal migration trends, and core behavioral hotspots.
 
-🌐 **Live Dashboard Link:** `[Insert your live Streamlit Community Cloud URL here once deployed]`
-
+🌐 **Live Dashboard Link:** [Click here to view the live app](https://priya-thakur04-african-elephant-movement-analytics-app-wf7rlc.streamlit.app/)
 ---
 
 ## Key Features & Architectural Highlights
