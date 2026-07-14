@@ -20,18 +20,21 @@ st.set_page_config(
 # Custom CSS injection for layout card formatting
 st.markdown("""
 <style>
-.metric-card {
+/* 1. Target the actual container Streamlit makes for cards */
+div[data-testid="stMetric"] {
     background-color: #f8f9fa;
     border-radius: 10px;
     padding: 15px;
     border-left: 5px solid #2E7D32;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0,0.05);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
 
-/* Add these lines right here */
+/* 2. Force the text inside Streamlit metrics to be dark gray */
 div[data-testid="stMetricLabel"] p {
     color: #262730 !important;
 }
+
+/* 3. Force the numbers inside Streamlit metrics to be blue/green */
 div[data-testid="stMetricValue"] div {
     color: #1a5f7a !important;
 }
@@ -108,7 +111,7 @@ avg_speed = (total_dist / total_hours) if total_hours > 0 else 0.0
 max_speed = elephant_df['speed_kmh'].max()
 
 with col1:
-    st.markdown(f"<div class='metric-card'><b>Total Data Pings Logged</b><br><span style='font-size:24px; font-weight:bold; color:#1B5E20;'>{total_pings:,}</span></div>", unsafe_allow_html=True)
+    st.metric(label="Total Data Pings Logged", value=f"{total_pings:,}")
 with col2:
     st.markdown(f"<div class='metric-card'><b>Total Accumulated Range</b><br><span style='font-size:24px; font-weight:bold; color:#1B5E20;'>{total_dist:,.2f} km</span></div>", unsafe_allow_html=True)
 with col3:
