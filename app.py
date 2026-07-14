@@ -113,11 +113,11 @@ max_speed = elephant_df['speed_kmh'].max()
 with col1:
     st.metric(label="Total Data Pings Logged", value=f"{total_pings:,}")
 with col2:
-    st.markdown(f"<div class='metric-card'><b>Total Accumulated Range</b><br><span style='font-size:24px; font-weight:bold; color:#1B5E20;'>{total_dist:,.2f} km</span></div>", unsafe_allow_html=True)
+    st.metric(label="Total Accumulated Range", value=f"{total_dist:,.2f} km")
 with col3:
-    st.markdown(f"<div class='metric-card'><b>Computed Net Velocity</b><br><span style='font-size:24px; font-weight:bold; color:#1B5E20;'>{avg_speed:.4f} km/h</span></div>", unsafe_allow_html=True)
+    st.metric(label="Computed Net Velocity", value=f"{avg_speed:.4f} km/h")
 with col4:
-    st.markdown(f"<div class='metric-card'><b>Maximum Peak Sprint</b><br><span style='font-size:24px; font-weight:bold; color:#1B5E20;'>{max_speed:.2f} km/h</span></div>", unsafe_allow_html=True)
+    st.metric(label="Maximum Peak Sprint", value=f"{max_speed:.2f} km/h")
 
 # 5. ML Clustering Infrastructure Block
 coords = elephant_df[['location-lat', 'location-long']].values
