@@ -36,7 +36,7 @@ st.markdown("---")
 # 2. Optimized Caching Mechanism for Large Telemetry Records
 @st.cache_data
 def load_data():
-    df = pd.read_csv("/Users/priya/Downloads/Elepant_dataset.csv")
+    df = pd.read_csv("Elepant_dataset_web.csv")
     df['timestamp'] = pd.to_datetime(df['timestamp'])
     df['year'] = df['timestamp'].dt.year
     df['month'] = df['timestamp'].dt.month
