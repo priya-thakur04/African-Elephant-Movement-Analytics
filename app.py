@@ -19,15 +19,23 @@ st.set_page_config(
 
 # Custom CSS injection for layout card formatting
 st.markdown("""
-    <style>
-    .metric-card {
-        background-color: #f8f9fa;
-        border-radius: 10px;
-        padding: 15px;
-        border-left: 5px solid #2E7D32;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
-    }
-    </style>
+<style>
+.metric-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    border-left: 5px solid #2E7D32;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0,0.05);
+}
+
+/* Add these lines right here */
+div[data-testid="stMetricLabel"] p {
+    color: #262730 !important;
+}
+div[data-testid="stMetricValue"] div {
+    color: #1a5f7a !important;
+}
+</style>
 """, unsafe_allow_html=True)
 
 st.title("🐘 Project Elephant: Geospatial & Behavioral Intelligence Workspace")
